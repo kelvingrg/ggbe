@@ -26,8 +26,11 @@ date:{
     },
     paymentOrders:{
         type:Array
+    },
+    orderId:{
+        type:mongoose.Types.ObjectId,
+        ref:'orders'
     }
 })
-const courtSchedules=mongoose.model('courtSchedules',courtScheduleSchema)
-courtScheduleSchema.index({ date: 1, 'slot.id': 1  ,courtId:1  }, { unique: true });
-module.exports=courtSchedules
+const courtSchedules=mongoose.model('courtSchedules',courtScheduleSchema) 
+module.exports=courtSchedules 

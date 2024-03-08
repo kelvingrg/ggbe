@@ -41,7 +41,7 @@ const doLogin=async (req,res)=>{
                     expiresIn: '2d', 
                     algorithm: 'HS256'
                   };
-                const token = jwt.sign({name:user.name}, process.env.JWT_PASSWORD, options);
+                const token = jwt.sign({...user,userId:user._id}, process.env.JWT_PASSWORD, options);
                 res.status(200).json({token,user})
             } else {
              res.status(401).json({message:'invalid credentials'})

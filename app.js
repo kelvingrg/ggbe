@@ -12,6 +12,7 @@ var authRouter = require('./routes/auth');
 var userRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var courtRouter = require('./routes/courts');
+var paymentRouter = require('./routes/paymentRouter');
 connectDB()
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/admin', adminRouter);
 app.use('/courts', courtRouter);
+app.use('/payment', paymentRouter);
 
 
 // catch 404 and forward to error handler
